@@ -1,0 +1,8 @@
+body #root {
+  min-height: 100vh; }
+  body #root #App {
+    min-height: 100vh; }
+    body #root #App #Application {
+      min-height: 100vh; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,49 @@
+{
+  "name": "dash_alpha",
+  "version": "1.0.0",
+  "description": "dashboard[nodejs[react[redux]]]",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node server.js --ignore public/",
+    "dev": "webpack-cli -wd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZuraSiprashviliNine/dash_alpha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZuraSiprashviliNine/dash_alpha/issues"
+  },
+  "homepage": "https://github.com/ZuraSiprashviliNine/dash_alpha#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bootstrap": "^4.1.2",
+    "ejs": "^2.6.1",
+    "eslint": "^5.1.0",
+    "eslint-plugin-react": "^7.10.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "mdbreact": "^4.6.0",
+    "mongodb": "^3.1.1",
+    "nodemon": "^1.18.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
+  }
+}

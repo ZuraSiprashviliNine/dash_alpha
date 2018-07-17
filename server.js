@@ -1,5 +1,5 @@
 
-import config from 'config';
+import config from './config';
 import path from 'path';
 import express from 'express';
 

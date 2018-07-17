@@ -13,6 +13,10 @@ import {
     Redirect
 } from 'react-router-dom';
 
+import {
+    Loading
+} from '../Components/Loading';
+
 class Element extends React.Component{
     render(){
         return (
@@ -49,16 +53,12 @@ class Element extends React.Component{
 class App extends React.Component{
 
     componentDidMount(){
-        if(this.props.Reducer.users.length === 0){
-            this.props.setUsers();
-        }
     }
 
     componentDidUpdate(props){
-        if(this.props.Reducer.users.length !== 0){
-            if(this.props.Reducer.ready === false){
-                this.props.startApp();
-            }
+        if(this.props.Reducer.ready === false){
+            this.props.set(true);
+            console.log('app started');
         }
     }
     

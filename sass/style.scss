@@ -1,5 +1,7 @@
 @import './bootstrap/functions';
 @import './bootstrap/variables';
+@import './animate/animate/rotateIn';
+@import './animate/animate/fadeIn';
 
 body{
   #root{
@@ -8,7 +10,33 @@ body{
       min-height: 100vh;
       #Application{
         min-height: 100vh;
+
+        .page{
+          min-height: 100vh;
+
+          position: relative;
+
+          @extend .fadeIn;
+        }
       }
     }
   }
+}
+
+#loading_page{
+  background-color: $black;
+
+  .jacker{
+    animation-iteration-count: infinite;
+    @extend .rotateIn;
+    color: $white;
+  }
+}
+
+.page{
+  background-color: $black;
+  color: $light;
+}
+
+#login_page{
 }

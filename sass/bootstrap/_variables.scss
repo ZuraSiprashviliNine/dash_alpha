@@ -82,7 +82,8 @@ $theme-colors: map-merge((
   "danger":     $danger,
   "light":      $light,
   "muted":	$muted,
-  "dark":       $dark
+  "dark":       $dark,
+  "black":       $black
 ), $theme-colors);
 // stylelint-enable
 

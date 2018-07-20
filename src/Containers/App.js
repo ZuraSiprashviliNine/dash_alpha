@@ -17,11 +17,18 @@ import {
     Loading
 } from '../Components/Loading';
 
+import Pages from './Pages/Pages';
+
 class Element extends React.Component{
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return (
             <div
-                id="App">
+                id="App"
+                className="animated fadeIn">
                 <div id="Application">
                     <Router>
                         <div id="RouterContainer">
@@ -29,17 +36,23 @@ class Element extends React.Component{
                                 <Route
                                     path="/"
                                     exact={true}
-                                    component={() => (
-                                        <div>
-                                            hi
-                                        </div>
-                                    )}/>
+                                    component={Pages.Home}/>
                                 <Route
-                                    component={() => (
-                                        <div>
-                                            bye
-                                        </div>
-                                    )}/>
+                                    path="/admin"
+                                    exact={true}
+                                    component={Pages.Admin}/>
+                                <Route
+                                    path="/login"
+                                    exact={true}
+                                    component={Pages.Login}/>
+                                <Route
+                                    path="/forgot"
+                                    exact={true}
+                                    component={Pages.Forgot}/>
+                                <Route
+                                    component={({match}) => 
+                                        <Redirect to={'/'} />
+                                    }/>
                             </Switch>
                         </div>
                     </Router>
@@ -53,12 +66,14 @@ class Element extends React.Component{
 class App extends React.Component{
 
     componentDidMount(){
+        if(this.props.Reducer.ready === false){
+            this.props.set(true);
+        }
     }
 
     componentDidUpdate(props){
         if(this.props.Reducer.ready === false){
             this.props.set(true);
-            console.log('app started');
         }
     }
     

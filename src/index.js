@@ -7,7 +7,7 @@ import Store from './store';
 
 import App from './Containers/App';
 
-class Element extends React.Component{
+export class Element extends React.Component{
     render(){
         return (
             <Provider

@@ -6,6 +6,7 @@ import { Loading } from '../../Components/Loading';
 import {
     Redirect
 } from 'react-router-dom';
+import { SWITCH_PAGE, ADD_PAGE_HISTORY } from '../../Actions/NavigationActions';
 
 class Element extends React.Component{
     render(){
@@ -20,24 +21,36 @@ class Element extends React.Component{
 }
 
 class Forgot_Page extends React.Component{
+    
+    componentDidMount(){
+        if(this.props.Navigation.currentPage !== this.props.match.path){
+            this.props.setPage(this.props.match.path);
+        }
+    }
+    
     render(){
         if(this.props.User.user){
             return <Redirect to="/admin"/>;            
         }else{
-            return true === true ? <Element {...this.props} /> : <Loading/>;
+            return this.props.App.ready === true ? <Element {...this.props} /> : <Loading/>;
         }
     }
 }
 
 const states = (state) => {
     return {
-        User: state.UserReducer
+        App: state.AppReducer,
+        User: state.UserReducer,
+        Navigation: state.NavigationReducer
     };
 };
 
 const actions = (dispatch) => {
     return {
-
+        setPage: (page) => {
+            dispatch(SWITCH_PAGE(page));
+            dispatch(ADD_PAGE_HISTORY(page));
+        }
     };
 };
 

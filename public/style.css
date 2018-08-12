@@ -1,3 +1,17 @@
+body {
+  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden; }
+
+.animated, #navigation .menus li.active, #navigation #drawer .draw_menu li.active, #gallery_page .containerCol .gallery_top li.active {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
 @-webkit-keyframes rotateIn {
   0% {
     -webkit-transform-origin: center center;
@@ -74,18 +88,353 @@
   -o-animation-name: fadeIn;
   animation-name: fadeIn; }
 
-body #root {
-  min-height: 100vh; }
-  body #root #App {
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+  80% {
+    -webkit-transform: translateY(-10px); }
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+  80% {
+    -moz-transform: translateY(-10px); }
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+  80% {
+    -o-transform: translateY(-10px); }
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+  80% {
+    transform: translateY(-10px); }
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown, #navigation {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    -o-transform: translateX(0); } }
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+.fadeInLeft, #navigation #drawer.active {
+  -webkit-animation-name: fadeInLeft;
+  -moz-animation-name: fadeInLeft;
+  -o-animation-name: fadeInLeft;
+  animation-name: fadeInLeft; }
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px); } }
+
+@-moz-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0); }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-20px); } }
+
+@-o-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -o-transform: translateX(0); }
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-20px); } }
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0); }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px); } }
+
+.fadeOutLeft, #navigation #drawer.not_active {
+  -webkit-animation-name: fadeOutLeft;
+  -moz-animation-name: fadeOutLeft;
+  -o-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft; }
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg); }
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg); }
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-moz-keyframes flipInY {
+  0% {
+    -moz-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+  40% {
+    -moz-transform: perspective(400px) rotateY(-10deg); }
+  70% {
+    -moz-transform: perspective(400px) rotateY(10deg); }
+  100% {
+    -moz-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@-o-keyframes flipInY {
+  0% {
+    -o-transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+  40% {
+    -o-transform: perspective(400px) rotateY(-10deg); }
+  70% {
+    -o-transform: perspective(400px) rotateY(10deg); }
+  100% {
+    -o-transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+@keyframes flipInY {
+  0% {
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0; }
+  40% {
+    transform: perspective(400px) rotateY(-10deg); }
+  70% {
+    transform: perspective(400px) rotateY(10deg); }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+
+.flipInY, #navigation .menus li.active, #navigation #drawer .draw_menu li.active, #gallery_page .containerCol .gallery_top li.active {
+  -webkit-backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  -moz-backface-visibility: visible !important;
+  -moz-animation-name: flipInY;
+  -o-backface-visibility: visible !important;
+  -o-animation-name: flipInY;
+  backface-visibility: visible !important;
+  animation-name: flipInY; }
+
+body {
+  background-color: #000; }
+  body #root {
     min-height: 100vh; }
-    body #root #App #Application {
-      min-height: 100vh; }
-      body #root #App #Application .page {
-        min-height: 100vh;
-        position: relative; }
+    body #root #App {
+      height: 100vh; }
+      @media screen and (max-width: 992px) and (min-width: 576px) {
+        body #root #App .container {
+          width: calc(100% - 1rem);
+          max-width: calc(100% - 1rem);
+          padding-left: 0.5rem !important padding-right 0.5rem !important; } }
+      body #root #App #Application {
+        min-height: 100vh; }
+        body #root #App #Application .page {
+          min-height: 100vh;
+          position: relative; }
+  body a {
+    text-decoration: none !important; }
+
+.theme_button, #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"] {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px 10px;
+  border: 1px solid rgba(248, 249, 250, 0.2);
+  transition: all 0.2s ease-in-out; }
+  .theme_button-active, .theme_button:hover, #about_page .page-content .blockItem .aboutContactMeForm button:hover[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm button:hover[type="reset"], #navigation .menus .subable:hover > .theme_button, #navigation #drawer .draw_menu .subable:hover > .theme_button, #navigation .menus #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable:hover > button[type="submit"], #navigation #drawer .draw_menu #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable:hover > button[type="submit"], #navigation .menus #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable:hover > button[type="reset"], #navigation #drawer .draw_menu #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable:hover > button[type="reset"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active .theme_button, #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button[type="submit"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button[type="reset"] {
+    background-color: #fff !important;
+    color: #000; }
+    .theme_button-active.theme_button-inverse, .theme_button-inverse.theme_button:hover, #about_page .page-content .blockItem .aboutContactMeForm button.theme_button-inverse:hover[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm button.theme_button-inverse:hover[type="reset"], #navigation .menus .subable:hover > .theme_button-inverse.theme_button, #navigation #drawer .draw_menu .subable:hover > .theme_button-inverse.theme_button, #navigation .menus #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button.theme_button-inverse[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable:hover > button.theme_button-inverse[type="submit"], #navigation #drawer .draw_menu #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button.theme_button-inverse[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable:hover > button.theme_button-inverse[type="submit"], #navigation .menus #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button.theme_button-inverse[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable:hover > button.theme_button-inverse[type="reset"], #navigation #drawer .draw_menu #about_page .page-content .blockItem .aboutContactMeForm .subable:hover > button.theme_button-inverse[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable:hover > button.theme_button-inverse[type="reset"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active .theme_button-inverse.theme_button, #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button.theme_button-inverse[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button.theme_button-inverse[type="submit"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button.theme_button-inverse[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button.theme_button-inverse[type="reset"] {
+      color: #000 !important; }
+  .theme_button-inverse {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff; }
+
+#navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 90;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(248, 249, 250, 0.2);
+  box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.2);
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  transition: all 0.2s ease-in-out; }
+  #navigation.scrolled {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-radius: 0 !important;
+    padding: 0 !important; }
+  @media only screen and (max-width: 768px) {
+    #navigation {
+      background-color: rgba(0, 0, 0, 0.9) !important;
+      border-radius: 0 !important; } }
+  #navigation .brand .brand_link .logo {
+    width: 62px; }
+  #navigation .brand .brand_link .text {
+    font-family: Bangers, cursive;
+    color: #fff; }
+  #navigation .menus li, #navigation #drawer .draw_menu li {
+    transition: all 0.2s ease-in-out; }
+  #navigation .menus .subable, #navigation #drawer .draw_menu .subable {
+    position: relative; }
+    #navigation .menus .subable .theme_button, #navigation #drawer .draw_menu .subable .theme_button, #navigation .menus .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable button[type="submit"], #navigation #drawer .draw_menu .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable button[type="submit"], #navigation .menus .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable button[type="reset"], #navigation #drawer .draw_menu .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable button[type="reset"] {
+      position: relative; }
+      #navigation .menus .subable .theme_button .tri, #navigation #drawer .draw_menu .subable .theme_button .tri, #navigation .menus .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"] .tri, #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable button[type="submit"] .tri, #navigation #drawer .draw_menu .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"] .tri, #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable button[type="submit"] .tri, #navigation .menus .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"] .tri, #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable button[type="reset"] .tri, #navigation #drawer .draw_menu .subable #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"] .tri, #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable button[type="reset"] .tri {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(248, 249, 250, 0.3);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        margin: auto; }
+    #navigation .menus .subable .sub-menu-container, #navigation #drawer .draw_menu .subable .sub-menu-container {
+      position: absolute;
+      width: 200%;
+      top: 40px;
+      left: -100%;
+      z-index: -5;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s ease-in-out; }
+      #navigation .menus .subable .sub-menu-container .sub-menu, #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu {
+        background-color: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(248, 249, 250, 0.2);
+        box-shadow: 0 0 12px 2px rgba(0, 0, 0, 0.2); }
+        #navigation .menus .subable .sub-menu-container .sub-menu .theme_button, #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu .theme_button, #navigation .menus .subable .sub-menu-container .sub-menu #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable .sub-menu-container .sub-menu button[type="submit"], #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu button[type="submit"], #navigation .menus .subable .sub-menu-container .sub-menu #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation .menus .subable .sub-menu-container .sub-menu button[type="reset"], #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu .subable .sub-menu-container .sub-menu button[type="reset"] {
+          display: block;
+          width: 100%; }
+    #navigation .menus .subable:hover .sub-menu-container, #navigation #drawer .draw_menu .subable:hover .sub-menu-container {
+      z-index: 1;
+      visibility: visible;
+      opacity: 1; }
+    #navigation .menus .subable:hover .tri, #navigation #drawer .draw_menu .subable:hover .tri {
+      border-top-color: #fff; }
+  #navigation #drawer {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(248, 249, 250, 0.2);
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    right: auto;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -100;
+    min-width: 30%; }
+    #navigation #drawer .firstRow {
+      background-color: rgba(0, 0, 0, 0.9); }
+    #navigation #drawer.active {
+      z-index: 100;
+      opacity: 1;
+      visibility: visible; }
+    #navigation #drawer.not_active {
+      z-index: -100;
+      opacity: 0;
+      visibility: hidden; }
+    @media only screen and (max-width: 576px) {
+      #navigation #drawer {
+        right: 0;
+        width: auto !important; } }
+    #navigation #drawer:hover {
+      border-color: rgba(248, 249, 250, 0.3);
+      background-color: rgba(0, 0, 0, 0.8); }
+    #navigation #drawer .brand {
+      border-bottom: 1px solid rgba(248, 249, 250, 0.2); }
+      #navigation #drawer .brand .brand_link .logo {
+        width: 62px; }
+      #navigation #drawer .brand .brand_link .text {
+        font-family: Bangers, cursive;
+        color: #fff; }
+    #navigation #drawer .draw_menu > li {
+      margin: 5px 10px; }
+      #navigation #drawer .draw_menu > li .theme_button, #navigation #drawer .draw_menu > li #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu > li button[type="submit"], #navigation #drawer .draw_menu > li #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #navigation #drawer .draw_menu > li button[type="reset"] {
+        width: 100%;
+        display: block; }
+      #navigation #drawer .draw_menu > li .sub-menu-container {
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important; }
 
 #loading_page {
-  background-color: #000; }
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50; }
   #loading_page .jacker {
     animation-iteration-count: infinite;
     color: #fff; }
@@ -93,3 +442,157 @@ body #root {
 .page {
   background-color: #000;
   color: #f8f9fa; }
+
+.particles-wrapper {
+  min-height: inherit;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  .particles-wrapper .particles-canvas {
+    min-height: inherit; }
+
+#home_page {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+  #home_page *::selection {
+    display: none; }
+  #home_page .page-content {
+    pointer-events: none;
+    position: relative;
+    padding: 0 !important;
+    min-height: 100vh; }
+    #home_page .page-content .logo img {
+      width: 82px; }
+    #home_page .page-content .text {
+      font-family: Bangers, cursive; }
+
+.page-content .containerCol {
+  border: 1px solid rgba(248, 249, 250, 0.2);
+  background-color: rgba(0, 0, 0, 0.3); }
+  .page-content .containerCol .blockItem {
+    border: 1px solid rgba(248, 249, 250, 0.2);
+    transition: all 0.2s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.3); }
+    .page-content .containerCol .blockItem:hover {
+      border: 1px solid rgba(248, 249, 250, 0.3);
+      background-color: rgba(0, 0, 0, 0.6); }
+    .page-content .containerCol .blockItem-inverse {
+      background-color: rgba(248, 249, 250, 0.1);
+      color: #000; }
+      .page-content .containerCol .blockItem-inverse:hover {
+        background-color: rgba(248, 249, 250, 0.15); }
+
+#about_page .page-content .blockItem {
+  color: #f8f9fa;
+  transition: all 0.2s ease-in-out; }
+  #about_page .page-content .blockItem:hover {
+    color: #fff; }
+  #about_page .page-content .blockItem .aboutContactMeTextBlock .card-title {
+    border-bottom: 1px solid rgba(248, 249, 250, 0.2);
+    font-family: Bangers, cursive; }
+  #about_page .page-content .blockItem .aboutContactMeForm input, #about_page .page-content .blockItem .aboutContactMeForm textarea {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(248, 249, 250, 0.2);
+    border-radius: 0;
+    color: #f8f9fa;
+    transition: all 0.2s ease-in-out; }
+    #about_page .page-content .blockItem .aboutContactMeForm input::placeholder, #about_page .page-content .blockItem .aboutContactMeForm textarea::placeholder {
+      color: #6c757d;
+      text-transform: capitalize; }
+    #about_page .page-content .blockItem .aboutContactMeForm input:hover, #about_page .page-content .blockItem .aboutContactMeForm textarea:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-color: rgba(248, 249, 250, 0.3);
+      color: #fff; }
+
+#about_page .page-content .sent_message {
+  font-family: Bangers, cursive; }
+
+.liker {
+  position: absolute;
+  top: 1rem;
+  bottom: auto;
+  left: auto;
+  right: 1rem;
+  z-index: 60; }
+
+#gallery_page .containerCol .gallery_top li {
+  transition: all 0.2s ease-in-out; }
+
+#gallery_page .containerCol .gallery_top .gallery_top_title {
+  font-family: Bangers, cursive; }
+
+#gallery_page .containerCol .gallery_content .gallery_item-container {
+  width: calc(25% - 5px);
+  margin: 2.5px; }
+  #gallery_page .containerCol .gallery_content .gallery_item-container .gallery_item_content_container {
+    z-index: 80;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out; }
+    #gallery_page .containerCol .gallery_content .gallery_item-container .gallery_item_content_container.active {
+      overflow: visible;
+      height: 100%;
+      max-height: 100vh; }
+  #gallery_page .containerCol .gallery_content .gallery_item-container .image {
+    position: relative; }
+    #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 70;
+      transition: all 0.2s ease-in-out; }
+      #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper .theme_button, #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper button[type="submit"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper button[type="reset"] {
+        padding: 5px 10px;
+        transition: all 0.2s ease-in-out; }
+      #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper .fa {
+        transition: all 0.2s ease-in-out; }
+      #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active .theme_button, #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button[type="submit"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button[type="submit"], #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active #about_page .page-content .blockItem .aboutContactMeForm button[type="reset"], #about_page .page-content .blockItem .aboutContactMeForm #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active button[type="reset"] {
+        font-size: 1.75rem;
+        padding: 10px 20px; }
+      #gallery_page .containerCol .gallery_content .gallery_item-container .image .dropper.active .fa {
+        transform: rotate(180deg); }
+  @media screen and (max-width: 992px) {
+    #gallery_page .containerCol .gallery_content .gallery_item-container {
+      width: calc(100% / 3 - 5px); } }
+  @media screen and (max-width: 768px) {
+    #gallery_page .containerCol .gallery_content .gallery_item-container {
+      width: calc(50% - 5px); } }
+  @media only screen and (max-width: 576px) {
+    #gallery_page .containerCol .gallery_content .gallery_item-container {
+      width: calc(100% - 5px); } }
+  #gallery_page .containerCol .gallery_content .gallery_item-container .border-bottom {
+    border-bottom: 1px solid rgba(248, 249, 250, 0.2) !important; }
+  #gallery_page .containerCol .gallery_content .gallery_item-container .title {
+    font-family: Oswald,sans-serif; }
+    #gallery_page .containerCol .gallery_content .gallery_item-container .title > a {
+      color: inherit; }
+
+#item_page .no_comments {
+  font-family: Bangers, cursive; }
+
+#item_page .item_images_cont {
+  position: relative; }
+
+#item_page .swiper-container .swiper-wrapper .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+#item_page .swiper-container .swiper-pagination-bullet {
+  background-color: rgba(248, 249, 250, 0.9); }
+  #item_page .swiper-container .swiper-pagination-bullet-active {
+    background-color: #fff; }
+
+#item_page .gallery_content .border-bottom {
+  border-bottom: 1px solid rgba(248, 249, 250, 0.2) !important; }
+
+#item_page .gallery_content .title {
+  font-family: Oswald,sans-serif; }
+  #item_page .gallery_content .title > a {
+    color: inherit; }

@@ -6,6 +6,7 @@ import { Loading } from '../../Components/Loading';
 import {
     Link
 } from 'react-router-dom';
+import { SWITCH_PAGE, ADD_PAGE_HISTORY } from '../../Actions/NavigationActions';
 
 class Element extends React.Component{
     constructor(props){
@@ -61,19 +62,33 @@ class Element extends React.Component{
 }
 
 class Login_Page extends React.Component{
+
+    componentDidMount(){
+        this.props.setPage(this.props.match.path);
+    }
+    
     render(){
-        return true === true ? <Element {...this.props} /> : <Loading/>;
+        if(this.props.User.user){
+            return <Redirect to="/admin"/>
+        }else{
+            return this.props.App.ready === true ? <Element {...this.props} /> : <Loading/>;
+        }
     }
 }
 
 const states = (state) => {
     return {
-
+        App: state.AppReducer,
+        User: state.UserReducer,
+        Navigation: state.NavigationReducer
     };
 };
 const actions = (dispatch) => {
     return {
-
+        setPage: (page) => {
+            dispatch(SWITCH_PAGE(page));
+            dispatch(ADD_PAGE_HISTORY(page));
+        }
     };
 };
 

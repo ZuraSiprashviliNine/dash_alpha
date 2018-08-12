@@ -8,6 +8,7 @@ import {
     Redirect,
     Link
 } from 'react-router-dom';
+import { SWITCH_PAGE, ADD_PAGE_HISTORY } from '../../Actions/NavigationActions';
 
 class Element extends React.Component{
     render(){
@@ -22,9 +23,14 @@ class Element extends React.Component{
 }
 
 class Admin_Page extends React.Component{
+    
+    componentDidMount(){
+        this.props.setPage(this.props.match.path);
+    }
+    
     render(){
         if(this.props.User.user){
-            return true === true ? <Element {...this.props}/> : <Loading/>;
+            return this.props.App.ready === true ? <Element {...this.props}/> : <Loading/>;
         }else{
             return <Redirect to="/login" />;
         }
@@ -34,13 +40,17 @@ class Admin_Page extends React.Component{
 const states = (state) => {
     return {
         App: state.AppReducer,
-        User: state.UserReducer
+        User: state.UserReducer,
+        Navigation: state.NavigationReducer
     };
 };
 
 const actions = (dispatch) => {
     return {
-
+        setPage: (page) => {
+            dispatch(SWITCH_PAGE(page));
+            dispatch(ADD_PAGE_HISTORY(page));
+        },
     };
 };
 
